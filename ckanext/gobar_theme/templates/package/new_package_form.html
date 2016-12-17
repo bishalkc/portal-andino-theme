@@ -12,13 +12,13 @@
     {% if form_style != 'edit' %}
         {{ super() }}
     {% else %}
-        GUARDAR CAMBIOS
+        SAVE CHANGES
     {% endif %}
 {% endblock %}
 
 {% block see_resources %}
     {% if form_style == 'edit' %}
-        {% link_for 'EDITAR RECURSOS', controller='package', action='resources', id=c.pkg_dict.name, class_='btn btn-blue' %}
+        {% link_for 'EDIT RESOURCES', controller='package', action='resources', id=c.pkg_dict.name, class_='btn btn-blue' %}
     {% endif %}
 {% endblock %}
 

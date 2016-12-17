@@ -6,7 +6,7 @@
         {% set with_datapusher = 'datapusher' in g.plugins %}
         <a href="{{ h.url_for('resource_edit', id=pkg.name, resource_id=res.id) }}">
             <div class="{{ 'col-xs-4' if with_datapusher else 'col-xs-6' }} {{ 'active' if current == 'edit' }}">
-                Editar recurso
+                Edit Resource
             </div>
         </a>
         {% if with_datapusher %}
@@ -18,7 +18,7 @@
         {% endif %}
         <a href="{{ h.url_for('views', id=pkg.name, resource_id=res.id) }}">
             <div class="{{ 'col-xs-4' if with_datapusher else 'col-xs-6' }}">
-                Vistas
+                Views
             </div>
         </a>
     </div>

@@ -12,14 +12,14 @@
                     <div class="back-btn">
                         <a href="{{ h.url_for(controller='package', action='resources', id=pkg.name) }}">
                             <i class="icon-chevron-left"></i>
-                            VOLVER
+                            RETURN
                         </a>
                     </div>
                     <h1>
                         {% if res %}
                             {{ res.name }}.{{ res.format.lower() }}
                         {% else %}
-                            Agregar recurso
+                            Add feature
                         {% endif %}
                     </h1>
 

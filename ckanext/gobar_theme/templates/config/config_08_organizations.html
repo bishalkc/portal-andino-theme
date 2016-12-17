@@ -10,11 +10,11 @@
             Do you want this section to be seen on your portal?
         </label>
 
-        <h2>Descripción</h2>
+        <h2>Description</h2>
         {% set description = h.get_theme_config('organization.description') %}
-        <textarea id="organization-description" title="Descripción de las organizaciones"
+        <textarea id="organization-description" title="Description of Organization
                   name="organization-description"
-                  placeholder="Mencioná una breve descripción de las organizaciones responsables de los datasets. Por favor, hacelo en no más de tres líneas."
+                  placeholder="Mention a brief description of the organizations responsible for the datasets. Please do it on no more than three lines. "
         >{{- description if description else '' -}}</textarea>
 
         <div class="submit-container">

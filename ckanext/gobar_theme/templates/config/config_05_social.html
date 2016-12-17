@@ -1,12 +1,11 @@
 {% extends "config/config_base.html" %}
 
 {% block config %}
-    <h1 class="small-margin">Redes sociales y contacto</h1>
+    <h1 class="small-margin">Social networks and contact</h1>
 
     <form id="social-config" method="post" action="" data-module="basic-form">
         <p class="with-bottom-margin">
-            Por favor, cargá las URL's de tus redes sociales y tu mail oficial
-            de contacto. Si no tenés alguno, dejalo en blanco y no se mostrará en la pagina.
+             Please upload the URLs of your social networks and your official mail contact. If you do not have any, leave it blank and it will not be displayed on the page.
         </p>
 
         <h2>Facebook</h2>
@@ -29,12 +28,12 @@
         {% set yt = h.get_theme_config('social.yt') %}
         <input type="text" title="Youtube" id="yt" name="yt" value="{{- yt if yt else '' -}}">
 
-        <h2>Mail de contacto</h2>
+        <h2>Contact mail</h2>
         {% set mail = h.get_theme_config('social.mail') %}
         <input type="text" title="Mail de contacto" id="mail" name="mail" value="{{- mail if mail else '' -}}">
 
         <div class="submit-container">
-            <button class="submit-button" type="submit" name="save">GUARDAR</button>
+            <button class="submit-button" type="submit" name="save">SAVE</button>
         </div>
     </form>
 {% endblock %}

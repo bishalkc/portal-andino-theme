@@ -2,10 +2,10 @@
 
 {% block config %}
 
-    <h1>Formato de los temas</h1>
+    <h1>Themes format</h1>
 
     <form method="post" action="" data-module="basic-form">
-        <h2 class="blue with-bottom-margin">¿Cómo te gustaría que se vea tu portada?</h2>
+        <h2 class="blue with-bottom-margin">How would you like your cover to look like?</h2>
 
         {% set selected_option = h.get_theme_config('groups.imgs') %}
         {% set something_selected = selected_option and selected_option|length > 0 %}
@@ -16,7 +16,7 @@
                     <img src="/img/config/temas1.svg" class="logo-datahub">
                     <div class="radio-description">
                         <h2>Themes with icons</h2>
-                        Mostrar temas con íconos y descripción
+                        Show topics with icons and description
                     </div>
                     <input value="show-icons" type="radio" name="group-imgs" {{ 'checked="checked"' if selected_option == 'show-icons' }}>
                 </div>
@@ -27,7 +27,7 @@
                     <img src="/img/config/temas2.svg" class="logo-datahub">
                     <div class="radio-description">
                         <h2>Themes without icons</h2>
-                        Mostrar temas solo con descripción
+                        Show topics with description only
                     </div>
                     <input value="hide-icons" type="radio" name="group-imgs" {{ 'checked="checked"' if selected_option == 'hide-icons' }}>
                 </div>
@@ -37,7 +37,7 @@
 
 
         <div class="submit-container">
-            <button class="submit-button" type="submit" name="save">GUARDAR</button>
+            <button class="submit-button" type="submit" name="save">SAVE</button>
         </div>
     </form>
 

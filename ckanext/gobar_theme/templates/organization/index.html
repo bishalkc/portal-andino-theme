@@ -11,14 +11,14 @@
             <div class="organization col-xs-12 col-md-10 col-md-offset-1">
                 {% if h.check_access('organization_create') %}
                     <div class="add-organization">
-                        {% link_for 'CREAR ORGANIZACIÓN', controller='organization', action='new', class_='' %}
+                        {% link_for 'CREATE ORGANIZATION', controller='organization', action='new', class_='' %}
                     </div>
                 {% endif %}
 
                 <div class="organization-list">
                     <div class="organization-list-title">
-                        <span>Organización</span>
-                        <span class="count-title">Datasets totales</span>
+                        <span>Organization</span>
+                        <span class="count-title">Total Datasets</span>
                     </div>
 
                     {% set organizations_tree = h.organization_tree() %}

@@ -1,25 +1,24 @@
 {% set global_groups = [
-  {"id": "AGRI", "label": "Agricultura, pesca, silvicultura y alimentación"},
-  {"id": "ECON", "label": "Economía y finanzas"},
-  {"id": "EDUC", "label": "Educación, cultura y deportes"},
-  {"id": "ENER", "label": "Energía"},
-  {"id": "ENVI", "label": "Medio ambiente"},
-  {"id": "GOVE", "label": "Gobierno y sector público"},
-  {"id": "HEAL", "label": "Salud"},
-  {"id": "INTR", "label": "Asuntos internacionales"},
-  {"id": "JUST", "label": "Justicia, sistema judicial y seguridad pública"},
-  {"id": "REGI", "label": "Regiones y ciudades"},
-  {"id": "SOCI", "label": "Población y sociedad"},
-  {"id": "TECH", "label": "Ciencia y tecnología"},
-  {"id": "TRAN", "label": "Transporte"}
+  {"id": "AGRI", "label": "Agriculture, fishing, forestry and food"},
+  {"id": "ECON", "label": "Economy and Finance"},
+  {"id": "EDUC", "label": "Education, culture and sports"},
+  {"id": "ENER", "label": "Energy"},
+  {"id": "ENVI", "label": "Environment"},
+  {"id": "GOVE", "label": "Government and public sector"},
+  {"id": "HEAL", "label": "Health"},
+  {"Id": "INTR", "label": "International Affairs"},
+  {"Id": "JUST", "label": "Justice, judicial system and public security"},
+  {"Id": "REGI", "label": "Regions and cities"},
+  {"Id": "SOCI", "label": "Population and society"},
+  {"Id": "TECH", "label": "Science and technology"},
+  {"Id": "TRAN", "label": "Transport"}
 ] %}
 
 {% set selected_global_groups = h.json_loads(h.get_pkg_extra(data, 'globalGroups') or '[]') %}
 
 <div class="control-group control-full">
-    <label class="control-label" for="field-groups">* Global Issues</label>
-    <p>Estos temas <strong>no se verán en tu portal</strong>. Al elegirlos, <strong>ayudás a que el portal nacional
-        datos.gob.ar pueda republicar el dataset con facilidad</strong>.</p>
+    <label class="control-label" for="field-groups">* Global Issues </ label>
+     <P> These <strong> themes will not be visible on your portal </ strong>. By choosing them, <strong> you help the national portal datahub.datanepal.com can easily republish the dataset </strong>.</p>
     <div class="controls package-groups super-groups">
         {% for group in global_groups %}
             <label class="package-group-label" for="{{ group.id }}">

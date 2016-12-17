@@ -1,6 +1,6 @@
 {% extends "gobar_page.html" %}
 
-{% block subtitle %} - Crear dataset{% endblock %}
+{% block subtitle %} - Create dataset{% endblock %}
 
 {% block content %}
     <div id="new-package-container" class="container-fluid">
@@ -10,10 +10,10 @@
                     <div class="back-btn">
                         <a href="{{ h.url('home') }}">
                             <i class="icon-chevron-left"></i>
-                            VOLVER
+                            RETURN
                         </a>
                     </div>
-                    <h1>Crear dataset y agregar recursos</h1>
+                    <h1>Create dataset and add resources</h1>
                     {{- h.snippet(form_snippet, c=c, **form_vars) -}}
                 </div>
             </div>

@@ -9,10 +9,10 @@
 
 {% block again_button %}{% endblock %}
 
-{% block save_button_text %}GUARDAR CAMBIOS{% endblock %}
+{% block save_button_text %}SAVE CHANGES{% endblock %}
 
 
 {% block see_all_resources_button %}
     {% set pkg = c.pkg_dict or pkg_dict %}
-    {% link_for 'VER TODOS LOS RECURSOS', controller='package', action='resources', id=pkg.name, class_='btn btn-blue' %}
+    {% link_for 'VIEW ALL RESOURCES', controller='package', action='resources', id=pkg.name, class_='btn btn-blue' %}
 {% endblock %}

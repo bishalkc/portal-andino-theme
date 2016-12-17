@@ -18,7 +18,7 @@
                   placeholder="I described the portal. Explain what your data catalog is about. Please do it on no more than three lines."
         >{{- description if description else '' -}}</textarea>
 
-        <h2>Imagen de fondo</h2>
+        <h2>Background image</h2>
         {% set image = h.get_theme_config('title.background-image') %}
         <div class="file-upload-container {{ 'with-image' if image else '' }}">
             <i class="icon-remove-sign" aria-hidden="true"></i>
@@ -28,7 +28,7 @@
             <label for="background-image">
                 <span class="upload-file-button">CHOOSE</span>
             </label>
-            <p>*Please choose , elegí formato .JPG, .SVG o .PNG.</p>
+            <p>*Please choose like .JPG, .SVG o .PNG.</p>
         </div>
 
         <div class="submit-container">

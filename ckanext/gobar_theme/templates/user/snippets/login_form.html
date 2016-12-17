@@ -6,15 +6,15 @@
 <form action="{{ action }}" method="post" class="form-horizontal">
   {{ form.errors(errors=error_summary) }}
 
-  {{ form.input('login', label='Usuario', id='field-login', value="", error=username_error) }}
+  {{ form.input('login', label='username', id='field-login', value="", error=username_error) }}
 
-  {{ form.input('password', label='Contraseña', id='field-password', type="password", value="", error=password_error) }}
+  {{ form.input('password', label='password', id='field-password', type="password", value="", error=password_error) }}
 
-  {{ form.checkbox('remember', label='Recordarme', id='field-remember', checked=true, value="63072000") }}
+  {{ form.checkbox('remember', label='Remember me', id='field-remember', checked=true, value="63072000") }}
 
   <div class="form-actions">
     {% block login_button %}
-        <button type="submit">INGRESAR</button>
+        <button type="submit">ENTER</button>
     {% endblock %}
   </div>
 </form>

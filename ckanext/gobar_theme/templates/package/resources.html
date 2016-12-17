@@ -1,6 +1,6 @@
 {% extends "gobar_page.html" %}
 
-{% block subtitle %} - Recursos del dataset{% endblock %}
+{% block subtitle %} - Dataset Resources{% endblock %}
 
 {% set has_reorder = c.pkg_dict and c.pkg_dict.resources and c.pkg_dict.resources|length > 0 %}
 
@@ -12,10 +12,10 @@
                     <div class="back-btn">
                         <a href="{{ h.url_for(controller='package', action='edit', id=c.pkg_dict.name) }}">
                             <i class="icon-chevron-left"></i>
-                            VOLVER
+                            RETURN
                         </a>
                     </div>
-                    <h1>Recursos del dataset</h1>
+                    <h1>Dataset Resources</h1>
                     <div class="form-like">
                         <div class="page_primary_action action-buttons"></div>
                         <div class="spacer"></div>

@@ -20,18 +20,18 @@ Example:
 <ol class="stages {{ class }}">
   <li class="first {{ s1 }}">
     {% if s1 != 'complete' %}
-      <span class="highlight">Crear dataset</span>
+      <span class="highlight">Create dataset</span>
     {% else %}
-      <button class="highlight" name="save" value="go-dataset" type="submit">Crear dataset</button>
+      <button class="highlight" name="save" value="go-dataset" type="submit">Create dataset</button>
     {% endif %}
   </li>
   <li class="last {{ s2 }}">
     {% if s2 != 'complete' %}
-      <span class="highlight">Agregar recursos</span>
+      <span class="highlight">Add resources</span>
     {% else %}
       {% if s1 == 'active' %}
         {# stage 1 #}
-        <button class="highlight" name="save" value="go-resources" type="submit">Agregar recursos</button>
+        <button class="highlight" name="save" value="go-resources" type="submit">Add resources</button>
       {% else %}
         {% link_for _('Add data'), controller='package', action='new', class_="highlight" %}
       {% endif %}

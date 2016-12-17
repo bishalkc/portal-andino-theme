@@ -1,6 +1,6 @@
 {% extends "gobar_page.html" %}
 
-{% block subtitle %} - Crear organización{% endblock %}
+{% block subtitle %} - Create organization{% endblock %}
 
 {% block content %}
     <div id="new-organization-container" class="container-fluid">
@@ -10,10 +10,10 @@
                     <div class="back-btn">
                         <a href="{{ h.url_for(controller='organization', action='index') }}">
                             <i class="icon-chevron-left"></i>
-                            VOLVER
+                            RETURN
                         </a>
                     </div>
-                    <h1>Crear organización</h1>
+                    <h1>Create organization</h1>
                     {{ c.form | safe }}
                 </div>
             </div>

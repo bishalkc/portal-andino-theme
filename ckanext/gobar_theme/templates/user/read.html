@@ -10,10 +10,10 @@
                     <div class="back-btn">
                         <a href="{{ h.url_for(controller='package', action='search') }}">
                             <i class="icon-chevron-left"></i>
-                            VOLVER
+                            RETURN
                         </a>
                     </div>
-                    <h1>Datasets en borrador</h1>
+                    <h1>Draft Datasets</h1>
                     <div class="dataset-list">
                         {%- set show_group_imgs = h.get_theme_config('groups.imgs') != 'hide-icons' -%}
                         {%- set packages = c.page.items -%}

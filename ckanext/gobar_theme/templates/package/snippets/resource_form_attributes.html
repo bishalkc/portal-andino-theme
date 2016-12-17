@@ -2,8 +2,7 @@
     <div class="control-group control-full">
         <h2 class="blue">Documentación del recurso</h2>
         <p>
-            Esto no se verá en el portal, pero ayuda al usuario a entender cuál es la información del recurso y cómo
-            usarla.
+            This will not be seen on the portal, but it helps the user to understand what resource information is and how to use it.
         </p>
     </div>
 
@@ -46,8 +45,8 @@
     {% endfor %}
 
     <div class="resource-attributes-actions">
-        <span id="add-col" class="btn">AGREGAR OTRA COLUMNA</span>
-        <span id="remove-col" class="btn {{ 'hidden' if attributes|length < 2 }}">BORRAR COLUMNA</span>
+        <span id="add-col" class="btn">ADD ANOTHER COLUMN</span>
+        <span id="remove-col" class="btn {{ 'hidden' if attributes|length < 2 }}">CLEAR COLUMN</span>
     </div>
 
     <input id="attributes-description" type="hidden"

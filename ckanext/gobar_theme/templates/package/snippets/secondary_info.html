@@ -1,5 +1,5 @@
 <div id="pkg-secondary-info" class="col-xs-12 col-md-4">
-    <h2 class="secondary-info-title">Información adicional</h2>
+    <h2 class="secondary-info-title">Additional Information</h2>
 
     <div id="info-container">
 
@@ -8,7 +8,7 @@
         {% if pkg.groups|length > 0 %}
             <div class="row group-row">
                 <div class="col-xs-5 title">
-                    Temas
+                    Themes
                 </div>
                 <div class="col-xs-7 value">
                     {%- set show_group_imgs = h.get_theme_config('groups.imgs') != 'hide-icons' -%}
@@ -34,7 +34,7 @@
         {% if pkg.tags|length > 0 %}
             <div class="row">
                 <div class="col-xs-5 title">
-                    Etiquetas
+                    Tags
                 </div>
                 <div class="col-xs-7 value">
                     {% for tag in pkg.tags %}
@@ -50,7 +50,7 @@
 
         <div class="row">
             <div class="col-xs-5 title">
-                Licencia
+                License
             </div>
             <div class="col-xs-7 value">
                 {{ pkg.license_title }}
@@ -93,7 +93,7 @@
         {% if pkg.url %}
             <div class="row">
                 <div class="col-xs-5 title">
-                    Fuente
+                    Source
                 </div>
                 <div class="col-xs-7 value">
                     {{ pkg.url|urlize }}
@@ -103,7 +103,7 @@
 
         <div class="row">
             <div class="col-xs-5 title">
-                Fecha de publicación
+                Publication date
             </div>
             <div class="col-xs-7 value">
                 {{ h.render_ar_datetime(pkg.metadata_created) }}
@@ -112,7 +112,7 @@
 
         <div class="row">
             <div class="col-xs-5 title">
-                Fecha de actualización
+                Update date
             </div>
             <div class="col-xs-7 value">
                 {{ h.render_ar_datetime(pkg.metadata_modified) }}
@@ -121,16 +121,16 @@
     </div>
 
     <div id="pkg-recent-activity">
-        <h2 class="recent-activity-title">Actividad reciente</h2>
+        <h2 class="recent-activity-title">Recent activity</h2>
         {% set activity = h.get_action('package_activity_list_html', {'id': pkg.id, 'limit': 500}) %}
         {{ activity }}
         <p class="activity-read-more">
             {{ h.snippet('svg/flecha_abajo.svg') }}
-            Mostrar más
+            Show more
             {{ h.snippet('svg/flecha_abajo.svg') }}
         </p>
 
-        <p class="activity-loading hidden">Cargando</p>
+        <p class="activity-loading hidden">Loading</p>
         <hr class="final-separator">
     </div>
 </div>
