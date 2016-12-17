@@ -3,7 +3,7 @@ $(function () {
     $('#group-imgs-modal #select-option').on('click', function () {
         var selectedOption = $('#group-imgs-modal').find('input[name="group-imgs"]:checked').val();
         var options = {'group-imgs': selectedOption, json: true};
-        var url = '/configurar/temas';
+        var url = '/config/themes';
         var callback = function () {
             $('#group-imgs-modal').modal('hide');
             if (selectedOption == 'hide-icons') {

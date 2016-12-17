@@ -33,9 +33,9 @@ class GobArRouter:
         self.home_routes.connect('/', action='index')
 
     def connect_static(self):
-        self.home_routes.connect('gobar_about', '/acerca', action='about')
+        self.home_routes.connect('gobar_about', '/about', action='about')
         self.redirect(
-            ('/about', '/acerca')
+            ('/about', '/about')
         )
 
     def connect_datasets(self):
@@ -61,20 +61,20 @@ class GobArRouter:
         )
 
     def connect_organizations(self):
-        self.route_map.connect('/organizaciones', action='index', controller='organization')
-        self.route_map.connect('/organization/new', action='new', controller='organization')
+        self.route_map.connect('/organizations', action='index', controller='organization')
+        self.route_map.connect('/organizations/new', action='new', controller='organization')
         self.redirect(
-            ('/organization', '/organizaciones'),
-            ('/organization/list', '/organization'),
-            ('/organization/{id}', '/organization/list'),
-            ('/organization/activity/{id}/{offset}', '/organization/list'),
-            ('/organization/about/{id}', '/organization/list'),
-            ('/organization/admins/{id}', '/organization/list'),
-            ('/organization/members/{id}', '/organization/list'),
-            ('/organization/member_new/{id}', '/organization/list'),
-            ('/organization/member_delete/{id}', '/organization/list'),
-            ('/organization/history/{id}', '/organization/list'),
-            ('/organization/bulk_process/{id}', '/organization/list')
+            ('/organizations', '/organizations'),
+            ('/organizations/list', '/organizations'),
+            ('/organizations/{id}', '/organizations/list'),
+            ('/organizations/activity/{id}/{offset}', '/organizations/list'),
+            ('/organizations/about/{id}', '/organizations/list'),
+            ('/organizations/admins/{id}', '/organizations/list'),
+            ('/organizations/members/{id}', '/organizations/list'),
+            ('/organizations/member_new/{id}', '/organizations/list'),
+            ('/organizations/member_delete/{id}', '/organizations/list'),
+            ('/organizations/history/{id}', '/organizations/list'),
+            ('/organizations/bulk_process/{id}', '/organizations/list')
         )
 
     def connect_groups(self):
@@ -140,20 +140,20 @@ class GobArRouter:
 
     def connect_template_config(self):
         with SubMapper(self.route_map, controller=self.config_controller) as m:
-            m.connect('/configurar/titulo', action='edit_title')
-            m.connect('/configurar/portada', action='edit_home')
-            m.connect('/configurar/encabezado', action='edit_header')
-            m.connect('/configurar/temas', action='edit_groups')
-            m.connect('/configurar/redes', action='edit_social')
-            m.connect('/configurar/pie-de-pagina', action='edit_footer')
-            m.connect('/configurar/datasets', action='edit_datasets')
-            m.connect('/configurar/organizaciones', action='edit_organizations')
-            m.connect('/configurar/acerca', action='edit_about')
-            m.connect('/configurar/metadata/google_fb', action='edit_metadata_google_fb')
-            m.connect('/configurar/metadata/tw', action='edit_metadata_tw')
-            m.connect('/configurar/mensaje_de_bienvenida', action='edit_greetings')
+            m.connect('/config/titulo', action='edit_title')
+            m.connect('/config/portada', action='edit_home')
+            m.connect('/config/encabezado', action='edit_header')
+            m.connect('/config/temas', action='edit_groups')
+            m.connect('/config/redes', action='edit_social')
+            m.connect('/config/pie-de-pagina', action='edit_footer')
+            m.connect('/config/datasets', action='edit_datasets')
+            m.connect('/config/organizations', action='edit_organizations')
+            m.connect('/config/about', action='edit_about')
+            m.connect('/config/metadata/google_fb', action='edit_metadata_google_fb')
+            m.connect('/config/metadata/tw', action='edit_metadata_tw')
+            m.connect('/config/mensaje_de_bienvenida', action='edit_greetings')
 
         self.redirect(
-            ('/configurar', '/configurar/titulo'),
-            ('/configurar', '/configurar/metadata')
+            ('/config', '/config/titulo'),
+            ('/config', '/config/metadata')
         )
