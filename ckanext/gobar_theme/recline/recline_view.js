@@ -2,10 +2,10 @@ this.ckan.module('recline_view', function (jQuery, _) {
   return {
     options: {
       i18n: {
-        errorLoadingPreview: "No se pudo cargar la previsualización.",
-        errorDataProxy: "No se pudo cargar la previsualización.",
-        errorDataStore: "No se pudo cargar la previsualización.",
-        previewNotAvailableForDataType: "No hay previsualización disponible para este tipo de archivo: "
+         errorLoadingPreview: "The preview could not be loaded.",
+         errorDataProxy: "The preview could not be loaded.",
+         errorDataStore: "The preview could not be loaded.",
+         previewNotAvailableForDataType: "There is no preview available for this file type:"
       },
       site_url: "",
       controlsClassName: "controls"

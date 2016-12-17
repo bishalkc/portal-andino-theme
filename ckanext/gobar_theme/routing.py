@@ -42,13 +42,13 @@ class GobArRouter:
         with SubMapper(self.route_map, controller=self.package_controller) as m:
             m.connect('search', '/dataset', action='search', highlight_actions='index search')
             m.connect('add dataset', '/dataset/new', action='new')
-        self.route_map.connect('/dataset/{id}/archivo/{resource_id}', action='resource_read', controller='package')
+        self.route_map.connect('/dataset/{id}/archive/{resource_id}', action='resource_read', controller='package')
         self.redirect(
             ('/dataset/history/{id:.*?}', '/dataset/{id}'),
             ('/dataset/activity/{id:.*?}', '/dataset/{id}'),
             ('/dataset/groups/{id:.*?}', '/dataset/{id}'),
             ('/dataset/followers/{id:.*?}', '/dataset/{id}'),
-            ('/dataset/{id}/resource/{resource_id}', '/dataset/{id}/archivo/{resource_id}')
+            ('/dataset/{id}/resource/{resource_id}', '/dataset/{id}/archive/{resource_id}')
         )
 
     def remove_dashboard(self):
@@ -60,21 +60,21 @@ class GobArRouter:
             ('/dashboard/{url:.*?}', '/dashboard')
         )
 
-    def connect_organizations(self):
-        self.route_map.connect('/organizations', action='index', controller='organization')
-        self.route_map.connect('/organizations/new', action='new', controller='organization')
+    def connect_organization(self):
+        self.route_map.connect('/organization', action='index', controller='organization')
+        self.route_map.connect('/organization/new', action='new', controller='organization')
         self.redirect(
-            ('/organizations', '/organizations'),
-            ('/organizations/list', '/organizations'),
-            ('/organizations/{id}', '/organizations/list'),
-            ('/organizations/activity/{id}/{offset}', '/organizations/list'),
-            ('/organizations/about/{id}', '/organizations/list'),
-            ('/organizations/admins/{id}', '/organizations/list'),
-            ('/organizations/members/{id}', '/organizations/list'),
-            ('/organizations/member_new/{id}', '/organizations/list'),
-            ('/organizations/member_delete/{id}', '/organizations/list'),
-            ('/organizations/history/{id}', '/organizations/list'),
-            ('/organizations/bulk_process/{id}', '/organizations/list')
+            ('/organization', '/organization'),
+            ('/organization/list', '/organization'),
+            ('/organization/{id}', '/organization/list'),
+            ('/organization/activity/{id}/{offset}', '/organization/list'),
+            ('/organization/about/{id}', '/organization/list'),
+            ('/organization/admins/{id}', '/organization/list'),
+            ('/organization/members/{id}', '/organization/list'),
+            ('/organization/member_new/{id}', '/organization/list'),
+            ('/organization/member_delete/{id}', '/organization/list'),
+            ('/organization/history/{id}', '/organization/list'),
+            ('/organization/bulk_process/{id}', '/organization/list')
         )
 
     def connect_groups(self):
@@ -96,7 +96,7 @@ class GobArRouter:
         )
 
     def connect_users(self):
-        self.route_map.connect('login', '/ingresar', action='login', controller='user')
+        self.route_map.connect('login', '/login', action='login', controller='user')
         self.route_map.connect('/logout', action='logout', controller='user')
         self.route_map.connect('user_datasets', '/user/{id:.*}', action='read',
                                controller='ckanext.gobar_theme.controller:GobArUserController')
@@ -147,7 +147,7 @@ class GobArRouter:
             m.connect('/config/redes', action='edit_social')
             m.connect('/config/pie-de-pagina', action='edit_footer')
             m.connect('/config/datasets', action='edit_datasets')
-            m.connect('/config/organizations', action='edit_organizations')
+            m.connect('/config/organization', action='edit_organization')
             m.connect('/config/about', action='edit_about')
             m.connect('/config/metadata/google_fb', action='edit_metadata_google_fb')
             m.connect('/config/metadata/tw', action='edit_metadata_tw')
