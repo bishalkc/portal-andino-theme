@@ -1,6 +1,6 @@
 {% extends "gobar_page.html" %}
 
-{% block subtitle %} - Acerca{% endblock %}
+{% block subtitle %} - About{% endblock %}
 
 {% block content %}
 
@@ -9,7 +9,7 @@
             <div id="about" class="col-xs-12 col-md-10 col-md-offset-1 gobar-static">
                 <div id="pkg-path">
                     {% set title = h.get_theme_config('title.site-title') %}
-                    <a href="{{ h.url_for(controller='package', action='search') }}">{{ title if title else '' }}</a> / Acerca
+                    <a href="{{ h.url_for(controller='package', action='search') }}">{{ title if title else '' }}</a> / About
                 </div>
 
 

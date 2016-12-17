@@ -71,13 +71,13 @@ $footer-height: 230px;
         }
       }
 
-      &.links-internos {
+      &.links-internal {
         a:hover {
           color: $blue-200;
         }
       }
 
-      &.links-externos {
+      &.links-external {
         text-align: right;
 
         .ckan-link {

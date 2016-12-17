@@ -1,6 +1,6 @@
-# Instalación
+# Installation
 
-Para tener una instancia corriendo se necesita
-* Instalar una instancia local de CKAN. Seguir [este doc](./01_instalacion_dev.md) (para instalacion bajo debian/ubuntu)
-* Instalar CKAN con Servidor WA separado del server de DB. Seguir [este doc](./install_ckan_rhel_centos.md) (para instalacion bajo RHEL7/CentOS6.3)
-* Instalar el tema visual y sus dependencias, siguiendo [este doc](./03_instalacion_tema_visual.md)
+To have a running instance you need
+* Install a local CKAN instance. Follow [this doc] (./ 01_instalacion_dev.md) (for installation under debian / ubuntu)
+* Install CKAN with Server WA separate from DB server. Follow [this doc] (./ install_ckan_rhel_centos.md) (for installation under RHEL7 / CentOS6.3)
+* Install the visual theme and its dependencies, following [this doc] (./ 03_instalacion_tema_visual.md)

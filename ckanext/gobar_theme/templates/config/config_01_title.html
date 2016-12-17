@@ -2,20 +2,20 @@
 
 {% block config %}
 
-    <h1>Título, descripción e imagen del portal</h1>
+    <h1>Title, description and image of the portal</h1>
 
     <form id="title-config" method="post" action="" data-module="basic-form" accept-charset="utf-8" enctype="multipart/form-data">
-        <h2>Título</h2>
-        <p>Podés usar, por ejemplo, Datos + el nombre o las siglas de tu organización.</p>
+        <h2>Title</h2>
+        <p>You can use, for example, data + the name or acronym of your organization. </p>
         {% set title = h.get_theme_config('title.site-title') %}
         <input name="site-title" type="text" title="Título del portal" placeholder="Título del portal"
                id="site-title" value="{{ title if title else '' }}">
 
-        <h2>Descripción del portal</h2>
-        <p>Tené en cuenta que esta es la explicación que le das a tus usuarios sobre lo que van a encontrar en tu portal.</p>
+        <h2>Description of the Portal</h2>
+        <p>Keep in mind that this is the explanation you give your users about what they will find on your portal. </p>
         {% set description = h.get_theme_config('title.site-description') %}
         <textarea name="site-description" id="description" title="Descripción del portal"
-                  placeholder="Describí el portal. Explicá de qué se trata tu catálogo de datos. Por favor, hacelo en no más de tres líneas."
+                  placeholder="I described the portal. Explain what your data catalog is about. Please do it on no more than three lines."
         >{{- description if description else '' -}}</textarea>
 
         <h2>Imagen de fondo</h2>
@@ -26,13 +26,13 @@
             <input type="file" id="background-image" name="background-image">
             <input type="hidden" name="image-logic" id="image-logic" value="">
             <label for="background-image">
-                <span class="upload-file-button">ELEGIR</span>
+                <span class="upload-file-button">CHOOSE</span>
             </label>
-            <p>*Por favor, elegí formato .JPG, .SVG o .PNG.</p>
+            <p>*Please choose , elegí formato .JPG, .SVG o .PNG.</p>
         </div>
 
         <div class="submit-container">
-            <button class="submit-button" type="submit" name="save">GUARDAR</button>
+            <button class="submit-button" type="submit" name="save">SAVE</button>
         </div>
     </form>
 

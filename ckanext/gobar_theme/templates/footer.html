@@ -53,8 +53,8 @@
                 <div class="logo-edit-container">
                     {% set url = h.get_theme_config('footer.url') %}
                     {% set image = h.get_theme_config('footer.image') %}
-                    <a href="{{ url if url else 'http://datos.gob.ar/' }}" target="_blank">
-                        <img src="{{ image if image else '/img/logo_ministerio.svg' }}" class="logo-ministerio">
+                    <a href="{{ url if url else 'http://datahub.datanepal.com/' }}" target="_blank">
+                        <img src="{{ image if image else '/img/logo_ministerio.svg' }}" class="logo-datahub">
                     </a>
                     {% if h.check_access('package_create') and c.controller != 'ckanext.gobar_theme.config_controller:GobArConfigController' %}
                         <a class="edit-logo-link"
@@ -64,16 +64,16 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="footer-section links-internos hidden-xs hidden-sm col-md-3">
+            <div class="footer-section links-internal hidden-xs hidden-sm col-md-3">
                 <p></p>
             </div>
-            <div class="footer-section links-externos col-xs-12 col-sm-6 col-md-3">
+            <div class="footer-section links-external col-xs-12 col-sm-6 col-md-3">
                 {% set mail = h.get_theme_config('social.mail') %}
                 {% if mail and mail|length > 0 %}
-                    <a href="mailto:{{ mail }}">Contactanos</a>
+                    <a href="mailto:{{ mail }}">Contact Us</a>
                 {% endif %}
                 <p class="ckan-link">
-                    Desarrollado por<br><a href="https://github.com/datosgobar/distribuible.datos.gob.ar" target="_blank">Andino</a> con <a href="http://ckan.org/" target="_blank"><span class="ckan-name">CKAN</span></a>
+                    Developed by<br><a href="https://github.com/bishalkc/" target="_blank">Bishal KC</a> forked from <a href="https://github.com/datosgobar/distribuible.datos.gob.ar"> Andino </a> with <a href="http://ckan.org/" target="_blank"><span class="ckan-name">CKAN</span></a>
                 </p>
             </div>
         </div>

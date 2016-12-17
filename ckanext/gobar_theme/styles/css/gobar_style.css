@@ -545,7 +545,7 @@ div.svg-tooltip {
     @media (min-width: 768px) {
       #header #header-spacing .logo-header {
         text-align: left; } }
-    #header #header-spacing .logo-header .logo-ministerio {
+    #header #header-spacing .logo-header .logo-datahub {
       height: 100%;
       max-width: 100%; }
 
@@ -611,17 +611,17 @@ div.svg-tooltip {
         #footer #footer-spacer .footer-section.logo a.social-link:hover {
           background: #0695d6;
           color: white; }
-      #footer #footer-spacer .footer-section.links-internos a:hover {
+      #footer #footer-spacer .footer-section.links-internal a:hover {
         color: #17b2f8; }
-      #footer #footer-spacer .footer-section.links-externos {
+      #footer #footer-spacer .footer-section.links-external {
         text-align: right; }
-        #footer #footer-spacer .footer-section.links-externos .ckan-link {
+        #footer #footer-spacer .footer-section.links-external .ckan-link {
           margin: 0;
           color: #767676;
           text-align: right; }
-        #footer #footer-spacer .footer-section.links-externos .ckan-name {
+        #footer #footer-spacer .footer-section.links-external .ckan-name {
           color: #0695d6; }
-          #footer #footer-spacer .footer-section.links-externos .ckan-name:hover {
+          #footer #footer-spacer .footer-section.links-external .ckan-name:hover {
             color: #17b2f8; }
       @media (min-width: 768px) {
         #footer #footer-spacer .footer-section {

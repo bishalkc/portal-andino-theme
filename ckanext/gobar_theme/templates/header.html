@@ -4,7 +4,7 @@
             <div class="col-xs-12 col-sm-5 no-padding logo-header">
                 <a href="{{ h.url('home') }}">
                     {% set image = h.get_theme_config('header.image') %}
-                    <img src="{{ image if image else '/img/logo_ministerio.svg' }}" class="logo-ministerio">
+                    <img src="{{ image if image else '/img/logo_ministerio.svg' }}" class="logo-datahub">
                 </a>
                 {% if h.check_access('package_create') and c.controller != 'ckanext.gobar_theme.config_controller:GobArConfigController' %}
                     <a class="edit-description-link"
@@ -18,12 +18,12 @@
                     <a href="{{ h.url_for(controller='package', action='search') }}">DATASETS</a>
 
                     {% if h.get_theme_config('organization.show-organizations') %}
-                        <a href="{{ h.url_for(controller='organization', action='index') }}">ORGANIZACIONES CON
-                            DATOS</a>
+                        <a href="{{ h.url_for(controller='organization', action='index') }}">ORGANIZATIONS WITH
+                             DATA</a>
                     {% endif %}
 
                     {% if h.get_theme_config('about.show-about') %}
-                        <a href="{{ h.url('gobar_about') }}">ACERCA</a>
+                        <a href="{{ h.url('gobar_about') }}">ABOUT</a>
                     {% endif %}
                 {% endif %}
             </div>

@@ -122,124 +122,104 @@ Son las categorías en las que se pueden clasificar todos los datasets de tu por
 
 ![alt text](assets/portal-andino-sec-temas-03.png "sec-temas-03")
 
-##### ¿Cómo los asigno?
+##### How do I assign them?
 
-**Cada vez que generes un nuevo dataset**, el formulario te pedirá que asignes temas. Recordá siempre reutilizar los que ya hayas creado y no repetirlos.  
+** Each time you generate a new dataset **, the form will prompt you to assign themes. Always remember to reuse the ones you have already created and do not repeat them.
 
-![alt text](assets/portal-andino-form-temas.png "form-temas")
+! [Alt text] (assets / portal-andino-form-themes.png "form-themes")
 ***
 ### Datasets
 
-También los llamamos “conjuntos de datos”. Son la pieza principal de tu portal o catálogo de datos. Cada dataset está formado por uno o más recursos. 
+We also call them "data sets". They are the main part of your portal or data catalog. Each dataset consists of one or more resources.
 
-##### ¿Dónde los veo en el portal?
+##### Where do I see them on the portal?
 
-Todos los datasets que subas al portal se verán **en la sección Datasets**. Además, **podrás destacar** los que creas más importantes en la Página principal.
+All datasets that you upload to the portal will be seen ** in the Datasets ** section. In addition, ** you will be able to highlight ** the ones that you create more important in the Main Page.
 
-![alt text](assets/portal-andino-sec-temas-02.png "sec-temas-2")
+! [Alt text] (assets / portal-andino-sec-themes-02.png "sec-themes-2")
 
-##### Buenas prácticas al crear datasets
+##### Good Practices When Creating Datasets
 
-* **Títulos de los datasets**: es el primer vistazo que los usuarios tendrán sobre su contenido. Por eso, intentá no superar los 100 caracteres. Prestá especial atención a las mayúsculas. Sólo los sustantivos propios las necesitan. 
+* ** Titles of datasets **: this is the first look users will have about their content. So try not to exceed 100 characters. Pay special attention to capital letters. Only their own nouns need them.
 
-* **Descripción de los datasets**: es el detalle que le contás a los usuarios. Por esa razón, es importante que trates de dar una explicación general de los datos con los que se va a encontrar. Intentá no superar los 500 caracteres.
+* ** Description of datasets **: is the detail that you tell the users. For that reason, it is important that you try to give a general explanation of the data you are going to find. Try not to exceed 500 characters.
 
-##### ¿Cómo los creo?
+##### How do I create them?
 
-Ingresá a tu cuenta y andá a **Página principal > Crear dataset**.
+Log in to your account and go to ** Home> Create dataset **.
 
-![alt text](assets/portal-andino-crear-dataset.png "crear-dat")
+! [Alt text] (assets / portal-andino-create-dataset.png "create-dat")
 
-**Siempre podrás editar los dataset** que hayas creado. Para eso, ingresá a tu cuenta > Página principal > Datasets > **Editar dataset**. 
+** You can always edit the dataset ** you have created. To do this, go to your account> Home> Datasets> ** Edit dataset **.
 ***
-### Recursos
+### Means
 
-Cada dataset está formado por, al menos, un recurso. Por eso decimos que los recursos son la pieza de información más pequeña del catálogo y los verdaderos activos de datos del portal. 
+Each dataset consists of at least one resource. That's why we say that resources are the smallest piece of information in the catalog and the real assets of data portal.
 
-##### ¿Dónde los veo en el portal?
+##### Where do I see them on the portal?
 
-Página principal > Datasets > Clic en el recurso específico.
+Home> Datasets> Click the specific resource.
 
-##### Buenas prácticas al crear recursos
-Seguí los mismos criterios de escritura que con los datasets. 
+##### Good Practices in Creating Resources
+I followed the same writing criteria as the datasets.
 
-* **Títulos de los recursos**: intentá no superar los 150 caracteres. 
+* ** Titles **: try not to exceed 150 characters.
 
-* **Descripción de los recursos**: intentá no superar los 200 caracteres.
+* ** Description of resources **: try not to exceed 200 characters.
 
-##### ¿Cómo los creo?
+##### How do I create them?
 
-Ingresá a tu cuenta y andá a Página principal > Crear dataset. Una vez que completes el dataset, podrás agregar recursos. 
+Log in to your account and go to Home> Create dataset. Once you complete the dataset, you can add resources.
 
-![alt text](assets/portal-andino-asig-recurso.png "crear-recurso")
+! [Alt text] (assets / portal-andino-asig-resource.png "create-resource")
 
-Al igual que con los datasets, siempre podrás editar los recursos que hayas creado. Para eso, ingresá a tu cuenta > Página principal > Datasets > Editar dataset > Editar recursos. 
+As with datasets, you can always edit the resources you have created. To do this, go to your account> Home> Datasets> Edit dataset> Edit features.
 ***
-### Etiquetas
+### Tags
 
-Son las palabras que ayudan a los usuarios a filtrar y encontrar los datasets. Cuanto más amplia y uniforme sea la lista de Etiquetas, mayor es su poder de ayuda. 
+They are the words that help users filter and find datasets. The wider and more uniform the list of labels, the greater its power of help.
 
-##### ¿Dónde las veo en el portal?
+##### Where do I see them on the portal?
 
-En cada dataset específico. 
+In each specific dataset.
 
-![alt text](assets/portal-andino-dat-tags.png "dat-tags")
+! [Alt text] (assets / portal-andino-dat-tags.png "dat-tags")
 
-##### Buenas prácticas al crear etiquetas
+##### Good practices when creating labels
 
-* Usá mayúsculas sólo donde corresponda.
-* Identificá palabras claves.
-* Respetá las etiquetas anteriores.
-* Agregá sinónimos y usá lenguaje natural.
-* Tratá de usar una sola palabra, siempre en plural.
-* Si la etiqueta tiene más de una palabra, separalas por un espacio. Por ejemplo: “declaraciones juradas”.
+* Use capital letters only where appropriate.
+* Identify keywords.
+* Respect previous tags.
+* Add synonyms and use natural language.
+* Try to use a single word, always in the plural.
+* If the label has more than one word, separate them by a space. For example: "affidavits".
 
-Estas son algunas preguntas útiles a la hora de pensar las etiquetas:
+Here are some useful questions when thinking about tags:
 
-* ¿Cuál es el tema?
-* ¿Qué aspectos serán de interés para los usuarios?
-* ¿De qué otro modo buscaría el usuario esta información?
-* ¿De qué tipo de información se trata?
-* ¿Qué área la provee?
+* Which is the topic?
+* What aspects will be of interest to users?
+* How else would the user find this information?
+* What type of information is involved?
+* What area does it provide?
 
-#####  ¿Cómo los creo?
+##### How do I create them?
 
-Al igual que con los Temas, cada vez que generes un nuevo dataset, el formulario te pedirá que asignes un etiqueta. Recordá siempre reutilizar las que ya hayas creado y no repetirlas.  
+As with Themes, each time you generate a new dataset, the form will prompt you to assign a label. Always remember to reuse the ones you have already created and do not repeat them.
 
-![alt text](assets/portal-andino-asig-tags.png "crear-etiquetas")
-
-***
-### Personalizar el portal
-
-Hacer que tu portal represente tu organización es muy fácil. Por favor, **andá a la Página principal > Configuración**. Llegarás a la sección que te permite cambiar cómo luce la portada de tu catálogo de datos y cada sección en particular.
-
-![alt text](assets/portal-andino-sec-config.png "sec-config")
+! [Alt text] (assets / portal-andino-asig-tags.png "create-tags")
 
 ***
-### Otros contenidos útiles
+### Customize the portal
 
-* [Guía para el uso y la publicación de metadatos](https://github.com/datosgobar/paquete-apertura-datos/raw/master/docs/Gu%C3%ADa%20para%20el%20uso%20y%20la%20publicaci%C3%B3n%20de%20metadatos%20(v0.1).pdf).
+Making your website represent your organization is very easy. Please ** go to Home> Settings **. You will get to the section that allows you to change how the front cover of your data catalog and each particular section looks.
 
-* [Guía para la identificación y uso de entidades interoperables](https://github.com/datosgobar/paquete-apertura-datos/raw/master/docs/Guia%20para%20la%20identificaci%C3%B3n%20y%20uso%20de%20entidades%20interoperables%20(v0.1).pdf).
+! [Alt text] (assets / portal-andino-sec-config.png "sec-config")
 
-* [Guía para la publicación de datos en formatos abiertos](https://github.com/datosgobar/paquete-apertura-datos/raw/master/docs/Gu%C3%ADa%20para%20la%20publicaci%C3%B3n%20de%20datos%20en%20formatos%20abiertos%20(v0.1).pdf).
+***
+### Other useful contents
 
+* [Guide to using and publishing metadata] (https://github.com/datosgobar/package-apertura-datos/raw/master/docs/Gu%C3%ADa%20para%20el%20uso%20y%20la % 20publication% 20% 20metadatos% 20 (v0.1) .pdf).
 
+* [Guide for the identification and use of interoperable entities] (https://github.com/datosgobar/package-apertura-datos/raw/master/docs/Guia%20para%20la%20identificaci%C3%B3n%20y%20uso % 20% 20% 20interoperable% 20 (v0.1) .pdf).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* [Guide to publishing data in open formats] (https://github.com/datosgobar/package-apertura-datos/raw/master/docs/Gu%C3%ADa%20para%20la%20publicaci%C3%B3n % 20of% 20data% 20in% 20formats% 20authorized% 20 (v0.1) .pdf).

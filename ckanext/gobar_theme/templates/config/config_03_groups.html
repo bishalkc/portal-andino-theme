@@ -13,9 +13,9 @@
         <div class="container-fluid radio-container">
             <label class="img-radio col-xs-12 col-md-6">
                 <div class="radio-box {{ (selected_option == 'show-icons' and 'selected') or (something_selected and 'not-selected') or '' }}">
-                    <img src="/img/config/temas1.svg" class="logo-ministerio">
+                    <img src="/img/config/temas1.svg" class="logo-datahub">
                     <div class="radio-description">
-                        <h2>Temas con íconos</h2>
+                        <h2>Themes with icons</h2>
                         Mostrar temas con íconos y descripción
                     </div>
                     <input value="show-icons" type="radio" name="group-imgs" {{ 'checked="checked"' if selected_option == 'show-icons' }}>
@@ -24,9 +24,9 @@
 
             <label class="img-radio col-xs-12 col-md-6">
                 <div class="radio-box {{ (selected_option == 'hide-icons' and 'selected') or (something_selected and 'not-selected') or '' }}">
-                    <img src="/img/config/temas2.svg" class="logo-ministerio">
+                    <img src="/img/config/temas2.svg" class="logo-datahub">
                     <div class="radio-description">
-                        <h2>Temas sin íconos</h2>
+                        <h2>Themes without icons</h2>
                         Mostrar temas solo con descripción
                     </div>
                     <input value="hide-icons" type="radio" name="group-imgs" {{ 'checked="checked"' if selected_option == 'hide-icons' }}>
