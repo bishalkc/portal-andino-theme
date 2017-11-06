@@ -38,12 +38,21 @@
                 </div>
                 <div class="col-xs-7 value">
                     {% for tag in pkg.tags %}
-                        <p class="pkg-tag">
+                        <p class="pkg-tag {{ 'hidden not-default-visible' if loop.index > 5 }}">
                             <a href="{{ h.add_url_param(new_params={'tags': tag.name}, alternative_url=dataset_url) }}">
                                 {{ tag.name }}
                             </a>
                         </p>
                     {% endfor %}
+
+                    {% if pkg.tags|length > 5 %}
+                        <p class="toggle-tags show-more-tags">
+                            Show more
+                        </p>
+                        <p class="toggle-tags show-fewer-tags hidden">
+                            Show less
+                        </p>
+                    {% endif %}
                 </div>
             </div>
         {% endif %}
@@ -118,6 +127,17 @@
                 {{ h.render_ar_datetime(pkg.metadata_modified) }}
             </div>
         </div>
+        {% set documentation_url = h.get_pkg_extra(pkg, 'Documentation') %}
+        {% if documentation_url and documentation_url.strip()|length > 0 %}
+            <div class="row">
+            <div class="col-xs-5 title">
+                Documentation
+            </div>
+            <div class="col-xs-7 value">
+                {{ documentation_url.strip()|urlize }}
+            </div>
+        </div>
+        {% endif %}
     </div>
 
     <div id="pkg-recent-activity">
@@ -135,4 +155,5 @@
     </div>
 </div>
 
+{% resource 'gobar_js/package/tags.js' %}
 {% resource 'gobar_js/package/activity.js' %}

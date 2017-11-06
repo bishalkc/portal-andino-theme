@@ -23,7 +23,7 @@ $(function () {
         $('.missing-field').remove();
         var titleValid = true;
         var urlValid = true;
-        var errorTemplate = '<div class="missing-field">Complete this data</div>';
+        var errorTemplate = '<div class="missing-field">Completá este dato</div>';
 
         var title = $('#field-name');
         titleValid = title.val().length > 0;

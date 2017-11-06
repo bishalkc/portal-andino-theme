@@ -27,7 +27,7 @@
                         </a>
                     {% endif %}
 
-                    {% if h.check_access('package_create') and (has_tw or has_github or has_fb or has_inst or has_yt) and c.controller != 'ckanext.gobar_theme.config_controller:GobArConfigController' %}
+                    {% if c.userobj and c.userobj.sysadmin and (has_tw or has_github or has_fb ) and c.controller != 'ckanext.gobar_theme.config_controller:GobArConfigController' %}
                         <a class="edit-social-link"
                            href="{{ h.url_for(controller='ckanext.gobar_theme.config_controller:GobArConfigController', action='edit_social') }}">
                             {% snippet "svg/edit.svg" %}
@@ -38,9 +38,9 @@
                     {% set url = h.get_theme_config('footer.url') %}
                     {% set image = h.get_theme_config('footer.image') %}
                     <a href="{{ url if url else 'https://data.soscbaha.org/' }}" target="_blank">
-                        <img src="{{ image if image else '/img/nepal-data-portal-logo.svg' }}" class="logo-datahub">
+                        <img src="{{ image if image else '/img/nepal-data-portal-logo.svg' }}" class="logo-ministerio">
                     </a>
-                    {% if h.check_access('package_create') and c.controller != 'ckanext.gobar_theme.config_controller:GobArConfigController' %}
+                    {% if c.userobj and c.userobj.sysadmin and c.controller != 'ckanext.gobar_theme.config_controller:GobArConfigController' %}
                         <a class="edit-logo-link"
                            href="{{ h.url_for(controller='ckanext.gobar_theme.config_controller:GobArConfigController', action='edit_footer') }}">
                             {% snippet "svg/edit.svg" %}
@@ -51,13 +51,12 @@
             <div class="footer-section links-internal hidden-xs hidden-sm col-md-3">
                 <a href="{{ h.url('gobar_our_site') }}"><p>About Portal</p></a>
                 <a href="{{ h.url('gobar_devs') }}"><p>Developers</p></a>
-                <a href="{{ h.url('gobar_legal') }}"><p>Legal Framework</p></a>
                 <a href="{{ h.url('gobar_glossary') }}"><p>Glorssary</p></a>
             </div>
-            <div class="footer-section links-external col-xs-12 col-sm-6 col-md-3">
+            <div class="footer-section links-externos col-xs-12 col-sm-6 col-md-3">
                 {% set mail = h.get_theme_config('social.mail') %}
                 {% if mail and mail|length > 0 %}
-                    <a href="mailto:{{ mail }}">Contact Us</a>
+                    <a href="mailto:{{ mail }}">Contact US</a>
                 {% endif %}
                 <p class="ckan-link">
                     Developed by<br><a href="http://www.soscbaha.org" target="_blank">SOS BAHA</a> and <a href="https://www.linkedin.com/bishalkc">Bishal KC</a><br>Thanks to <a href="https://github.com/datosgobar/portal-andino-theme">Andino Theme</a>

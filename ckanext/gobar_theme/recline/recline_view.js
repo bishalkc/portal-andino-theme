@@ -2,10 +2,10 @@ this.ckan.module('recline_view', function (jQuery, _) {
   return {
     options: {
       i18n: {
-         errorLoadingPreview: "The preview could not be loaded.",
-         errorDataProxy: "The preview could not be loaded.",
-         errorDataStore: "The preview could not be loaded.",
-         previewNotAvailableForDataType: "There is no preview available for this file type:"
+        errorLoadingPreview: "The preview could not be loaded.",
+        errorDataProxy: "The preview could not be loaded.",
+        errorDataStore: "The preview could not be loaded.",
+        previewNotAvailableForDataType: "There is no preview available for this file type:"
       },
       site_url: "",
       controlsClassName: "controls"
@@ -152,21 +152,21 @@ this.ckan.module('recline_view', function (jQuery, _) {
       var views = [
         {
           id: 'grid',
-          label: 'Tabla',
+          label: 'Data Table',
           view: new recline.View.SlickGrid({
             model: dataset
           })
         },
         {
           id: 'graph',
-          label: 'Gráficos',
+          label: 'Graphs',
           view: new recline.View.Graph({
             model: dataset
           })
         },
         {
           id: 'map',
-          label: 'Mapa',
+          label: 'Map',
           view: new recline.View.Map({
             model: dataset
           })
@@ -176,7 +176,7 @@ this.ckan.module('recline_view', function (jQuery, _) {
       var sidebarViews = [
         {
           id: 'valueFilter',
-          label: 'Filtros',
+          label: 'Filters',
           view: new recline.View.ValueFilter({
             model: dataset
           })

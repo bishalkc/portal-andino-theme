@@ -10,16 +10,18 @@
             <div id="new-package" class="col-xs-12 col-md-10 col-md-offset-1">
                 <div class="col-xs-12 col-md-10 col-md-offset-1">
                     <div class="back-btn">
-                        <a href="{{ h.url('home') }}">
+                        {% set referer_url = request.headers.Referer %}
+                        {% set current_url = request.path_url %}
+                        <a href="{{ referer_url if referer_url and referer_url != current_url else h.url('home') }}">
                             <i class="icon-chevron-left"></i>
                             GO BACK
                         </a>
                     </div>
                     {% if 'active' in stage and 'complete' in stage %}
-                        <h1>EDIT DATASET</h1>
+                        <h1>Edit dataset</h1>
                     {% else %}
                         <h1>Create dataset and add resources</h1>
-                    {% endif %}                        
+                    {% endif %}
                     {{- h.snippet(form_snippet, c=c, **form_vars) -}}
                 </div>
             </div>

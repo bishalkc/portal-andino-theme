@@ -1,3 +1,4 @@
+# coding=utf-8
 from routes.mapper import SubMapper
 
 
@@ -11,6 +12,8 @@ class GobArRouter:
         self.api_controller = 'ckanext.gobar_theme.controller:GobArApiController'
         self.package_controller = 'ckanext.gobar_theme.package_controller:GobArPackageController'
         self.config_controller = 'ckanext.gobar_theme.config_controller:GobArConfigController'
+        self.user_controller = 'ckanext.gobar_theme.user_controller:GobArUserController'
+        self.google_analytics_controller = 'ckanext.gobar_theme.google_analytics_controller:GobArGAController'
 
     def redirect(self, *routes):
         for url_from, url_to in routes:
@@ -26,16 +29,18 @@ class GobArRouter:
         self.remove_dashboard()
         self.remove_tags()
         self.remove_revision()
+        # self.remove_admin()
         self.connect_api()
         self.connect_template_config()
+        self.connect_google_analytics()
 
     def connect_home(self):
         self.home_routes.connect('/', action='index')
 
     # def connect_static(self):
-    #     self.home_routes.connect('gobar_about', '/about', action='about')
+    #     self.home_routes.connect('gobar_about', '/acerca', action='about')
     #     self.redirect(
-    #         ('/about', '/about')
+    #         ('/about', '/acerca')
     #     )
     def connect_static(self):
         self.home_routes.connect('gobar_about', '/about', action='about')
@@ -46,10 +51,16 @@ class GobArRouter:
         self.redirect(
             ('/about', '/about')
         )
+    def connect_google_analytics(self):
+        with SubMapper(self.route_map, controller=self.google_analytics_controller) as m:
+            m.connect('resource view embed', '/dataset/resource_view_embed/{resource_id}', action='resource_view_embed')
+
     def connect_datasets(self):
         with SubMapper(self.route_map, controller=self.package_controller) as m:
             m.connect('search', '/dataset', action='search', highlight_actions='index search')
             m.connect('add dataset', '/dataset/new', action='new')
+            m.connect('edit dataset', '/dataset/edit/{id}', action='edit')
+            m.connect('new resource', '/dataset/new_resource/{id}', action='new_resource')
         self.route_map.connect('/dataset/{id}/archive/{resource_id}', action='resource_read', controller='package')
         self.redirect(
             ('/dataset/history/{id:.*?}', '/dataset/{id}'),
@@ -106,8 +117,21 @@ class GobArRouter:
     def connect_users(self):
         self.route_map.connect('login', '/login', action='login', controller='user')
         self.route_map.connect('/logout', action='logout', controller='user')
-        self.route_map.connect('user_datasets', '/user/{id:.*}', action='read',
-                               controller='ckanext.gobar_theme.controller:GobArUserController')
+        with SubMapper(self.route_map, controller=self.user_controller) as m:
+            m.connect('/drafts', action="drafts")
+            m.connect('/user/reset/{user_id}', action="password_reset")
+            m.connect('user_datasets', '/user/{id:.*}', action='read')
+            m.connect('/login', '/login', action='login')
+            m.connect('/change_password', action="password_forgot")
+            m.connect('/config/my_account', action="my_account")
+            m.connect('/config/my_account/change_email', action="my_account_edit_email")
+            m.connect('/config/my_account/change_password', action="my_account_edit_password")
+            m.connect('/config/create_users', action="create_users")
+            m.connect('/config/edit_user', action="edit_user")
+            m.connect('/config/delete_user', action="delete_user")
+            m.connect('/config/historical', action="user_history")
+            m.connect('/config/historial.json', action="user_history_json")
+
         self.redirect(
             ('/user/login', '/'),
             ('/user/generate_key/{id}', '/'),
@@ -117,7 +141,6 @@ class GobArRouter:
             ('/user/unfollow/{id}', '/'),
             ('/user/followers/{id:.*}', '/'),
             ('/user/delete/{id}', '/'),
-            ('/user/reset/{id:.*}', '/'),
             ('/user/register', '/'),
             ('/user/reset', '/'),
             ('/user/set_lang/{lang}', '/'),
@@ -142,9 +165,18 @@ class GobArRouter:
             ('/revision/{id}', '/revision')
         )
 
+    def remove_admin(self):
+        self.redirect(
+            ('/ckan-admin', '/'),
+            ('/ckan-admin/config', '/'),
+            ('/ckan-admin/trash', '/'),
+            ('/ckan-admin/{action}', '/')
+        )
+
     def connect_api(self):
         with SubMapper(self.route_map, controller=self.api_controller, path_prefix='/api{ver:/3|}', ver='/3') as m:
             m.connect('/action/{logic_function}', action='action', conditions=dict(method=['GET', 'POST']))
+            m.connect('/util/status', action='status')
 
     def connect_template_config(self):
         with SubMapper(self.route_map, controller=self.config_controller) as m:

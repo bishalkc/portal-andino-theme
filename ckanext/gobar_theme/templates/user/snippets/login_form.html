@@ -6,9 +6,15 @@
 <form action="{{ action }}" method="post" class="form-horizontal">
   {{ form.errors(errors=error_summary) }}
 
-  {{ form.input('login', label='username', id='field-login', value="", error=username_error) }}
+  {{ form.input('login', label='User', id='field-login', value="", error=username_error) }}
 
-  {{ form.input('password', label='password', id='field-password', type="password", value="", error=password_error) }}
+  {{ form.input('password', label='Password', id='field-password', type="password", value="", error=password_error) }}
+
+  {% if login_error %}
+    <p class="error">
+        We did not find any users with that username and password combination
+    </p>
+  {% endif %}
 
   {{ form.checkbox('remember', label='Remember Me', id='field-remember', checked=true, value="63072000") }}
 
@@ -17,4 +23,8 @@
         <button type="submit">LOGIN</button>
     {% endblock %}
   </div>
+
+  <p class="password-reset">
+      <a href="#" id="password-reset-show-modal">Forgot Password</a>
+  </p>
 </form>

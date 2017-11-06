@@ -1,7 +1,7 @@
 {% import 'macros/form.html' as form %}
 {% set action = c.form_action or '' %}
 
-<form id="dataset-edit" class="dataset-form form-horizontal" method="post" action="{{ action }}"
+<form novalidate="novalidate" id="dataset-edit" class="dataset-form form-horizontal" method="post" action="{{ action }}"
       data-module="basic-form">
     {% block stages %}
         {{ h.snippet('package/snippets/stages.html', stages=stage) }}
@@ -23,7 +23,7 @@
     {% snippet 'package/snippets/package_metadata_fields.html', data=data, errors=errors %}
 
     <div class="form-actions">
-        {% block delete_button_dataset %}
+        {% block delete_button %}
             {% if h.check_access('package_delete', {'id': data.id}) and not data.state == 'deleted' %}
                 <button type="button" class="btn btn-red" id="confirm-delete">
                     DELETE DATASET
@@ -31,7 +31,7 @@
             {% endif %}
         {% endblock %}
         {% block save_draft %}
-            <button class="btn btn-transparent" type="submit" name="save" value="save-draft">
+            <button class="btn btn-green" type="submit" name="save" value="save-draft">
                 SAVE DRAFT
             </button>
         {% endblock %}

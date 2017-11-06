@@ -36,6 +36,16 @@ def organization_tree():
     return organizations
 
 
+def get_suborganizations():
+    organizations = organization_tree()
+    suborganizations = []
+    for organization in organizations:
+        if 'children' in organization:
+            for child in organization['children']:
+                suborganizations.append(child['name'])
+    return suborganizations
+
+
 def get_faceted_groups():
     data_dict_page_results = {
         'all_fields': True,
@@ -219,7 +229,38 @@ def render_ar_datetime(datetime_):
         'hour': datetime_.hour,
         'day': datetime_.day,
         'year': datetime_.year,
-        'month': datetime_.month,
+        'month': formatters._MONTH_FUNCTIONS[datetime_.month - 1](),
         'timezone': datetime_.tzinfo.zone,
     }
-    return _('{day}/{month}/{year}').format(**details)
+    return _('{day} {month} {year}').format(**details)
+
+
+def accepted_mime_types():
+    return [
+        'html',
+        'json',
+        'xml',
+        'text',
+        'csv',
+        'xls',
+        'api',
+        'pdf',
+        'zip',
+        'rdf',
+        'nquad',
+        'ntriples',
+        'turtle',
+        'shp',
+        'xlsx',
+        'geojson',
+        'sav',
+        'jpg'
+    ]
+
+
+def valid_length(data, max_length):
+    return len(data) <= max_length
+
+
+def capfirst(s):
+    return s[0].upper() + s[1:]

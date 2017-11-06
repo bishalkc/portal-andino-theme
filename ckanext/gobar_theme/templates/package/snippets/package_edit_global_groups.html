@@ -17,8 +17,8 @@
 {% set selected_global_groups = h.json_loads(h.get_pkg_extra(data, 'globalGroups') or '[]') %}
 
 <div class="control-group control-full">
-    <label class="control-label" for="field-groups">* Global Issues</label>
-    <p>These <strong> themes will not be visible on your portal </strong>. By choosing them, <strong> you help the national portal <a href="https://data.soscbaha.org"> Social Science Baha</a> can easily republish the dataset </strong>.</p>
+    <label class="control-label" for="field-groups">* Global Topics</label>
+    <p>These <strong> themes will not be visible on your portal </strong>. By choosing them, <strong> you help the national portal https://data.soscbaha.org can easily republish the dataset </strong>.</p>
     <div class="controls package-groups super-groups">
         {% for group in global_groups %}
             <label class="package-group-label" for="{{ group.id }}">

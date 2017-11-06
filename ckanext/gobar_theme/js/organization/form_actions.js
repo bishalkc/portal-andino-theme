@@ -1,36 +1,46 @@
 $(function () {
     var submit_count = 0;
-    function formIsValid() {
-        $('.missing-field').remove();
-        var isValid = true;
-        var errorTemplate = '<div class="missing-field">Completá este dato</div>';
 
-        var title = $('#field-name');
-        if (!title.val().length > 0) {
-            isValid = false;
-            title.after(errorTemplate)
-        }
-
+    function urlValidator(errorTemplate) {
         var url = $('#field-url');
-        var url_preview = $('.slug-preview-value')
+        var urlPreview = $('.slug-preview-value')
+        var urlValid = true;
         if ($('.slug-preview').css('display') == 'none'){
             if (!url.val().length > 0) {
-                isValid = false;
+                urlValid = false;
                 url.parent().after(errorTemplate)
             }
         } else {
-            if (url_preview.text() == '<nombre-de-la-organización>') {
-                isValid = false;
+            if (urlPreview.text() == '<Organizations Name>') {
+                urlValid = false;
                 $('.slug-preview').after(errorTemplate)
             }
         }
+        return urlValid;
+    }
 
+    function formIsValid() {
+        $('.missing-field').remove();
+        var titleValid = true;
+        var urlValid = true;
+        var errorTemplate = '<div class="missing-field">Please complete missiong data</div>';
+
+        var title = $('#field-name');
+        titleValid = title.val().length > 0;
+
+        if (!titleValid){
+            title.after(errorTemplate);
+        } else {
+            urlValid = urlValidator(errorTemplate);
+        }
+
+        var isValid = titleValid && urlValid;
         if (!isValid) {
             window.scrollTo(0, 0);
         }
 
         return isValid;
-    };
+    }
 
     $(document).on('click', '.btn-mini', function () {
         if (submit_count > 0){

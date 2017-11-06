@@ -17,7 +17,8 @@
                 {% snippet "svg/menu.svg" %}
             </div>
 
-            <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="What datasets are you looking for?" maxlength="200">
+            <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off"
+                   placeholder="What datasets are you looking for?" maxlength="200">
             <button type="submit" value="search">
                 <img src="/img/search_gris.svg" class="search-icon">
             </button>
@@ -43,7 +44,7 @@
 </form>
 
 {% if error %}
-    <p class="search-error"><strong>An error occurred while searching.</strong></p>
+    <p class="search-error"><strong>Ha ocurrido un error con la busqueda.</strong></p>
     <p>Please try back and if the problem persists <a href="{{ h.url('gobar_contacto') }}">contact us</a>.</p>
 {% else %}
     {% if count == 0 %}

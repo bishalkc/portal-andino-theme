@@ -1,6 +1,13 @@
 {% import 'macros/form.html' as form %}
 
-{{ form.input('title', id='field-title', label='* Title of Dataset', placeholder='Ex: System of Contracts ELectricals ', value=data.title, error=errors.title, classes=['control-full', 'control-large'], attrs={'data-module': 'slug-preview-target'}) }}
+{% set max_length_title = 100 %}
+{% set valid_title = h.valid_length(data.title, max_length_title) %}
+{% if valid_title %}
+    {% set after_desc_title = ["Please do not exceed the ", max_length_title, " characters."] %}
+{% else %}
+    {% set after_desc_title = ["Please, for the title of the dataset to be clearer, <b>do not exceed ", max_length_title, " characters.</b>"] %}
+{% endif %}
+{{ form.input('title', id='field-title', label='* Title of Dataset', placeholder='Ex: System of Contracts Electricals', value=data.title, error=errors.title, classes=['control-full', 'control-large'], attrs={'data-module': 'slug-preview-target', 'data-valid-title-length': max_length_title}, after_desc=after_desc_title|join|safe, max_length=max_length_title) }}
 
 {% set prefix = h.url_for(controller='package', action='read', id='') %}
 {% set domain = h.url_for(controller='package', action='read', id='', qualified=true) %}
@@ -9,7 +16,15 @@
 
 {{ form.prepend('name', id='field-name', label=_('URL'), prepend=prefix, placeholder=_('eg. my-dataset'), value=data.name, error=errors.name, attrs=attrs, is_required=true) }}
 
-{{ form.markdown_custom('notes', id='field-notes', label='* Description of dataset', placeholder='Ex: Data corresponding to the System of Electronic Contracts, including the contracting of goods and services, the Information System of Suppliers (SIPRO) and the Catalog of Goods and Services (SIByS).', value=data.notes, error=errors.notes, after_desc='Por favor, no superes los 500 caracteres.') }}
+{% set max_length_description = 500 %}
+{% set valid_desc = h.valid_length(data.notes, max_length_description) %}
+{% if valid_desc %}
+    {% set after_desc_description = ["Please do not exceed the ", max_length_description, " characters."] %}
+{% else %}
+    {% set after_desc_description = ["Please, for the description of the dataset to be clearer, <b>do not exceed ", max_length_description, " characters.</b>"] %}
+{% endif %}
+
+{{ form.markdown_custom('notes', id='field-notes', label='* Description of dataset', placeholder='Ex: Data corresponding to the System of Electronic Contracts, including the contracting of goods and services, the Information System of Suppliers (SIPRO) and the Catalog of Goods and Services (SIByS).', value=data.notes, error=errors.notes, attrs={'data-valid-desc-length': max_length_description}, after_desc=after_desc_description|join|safe, max_length=max_length_description) }}
 
 {# if we have a default group then this wants remembering #}
 {% if data.group_id %}

@@ -1,12 +1,12 @@
 from ckan.controllers.home import HomeController
 from ckan.controllers.api import ApiController
-from ckan.controllers.user import UserController
-import ckan.lib.helpers as h
 from ckan.common import c
 import ckan.logic as logic
 import ckan.model as model
 import ckan.lib.base as base
 import json
+import ckan.plugins as p
+from ckanext.googleanalytics.controller import GAApiController
 
 
 class GobArHomeController(HomeController):
@@ -49,7 +49,7 @@ class GobArHomeController(HomeController):
 
     def index(self):
         c.groups = self._list_groups()
-        c.sorted_groups = sorted(c.groups, key=lambda x: x['display_name'].lower())        
+        c.sorted_groups = sorted(c.groups, key=lambda x: x['display_name'].lower())
         c.featured_packages = self._featured_packages()
         return super(GobArHomeController, self).index()
 
@@ -58,16 +58,14 @@ class GobArHomeController(HomeController):
     def about_our_site(self):
         return base.render('static/about_our_site.html')
 
-    def about_legal(self):
-        return base.render('static/about_legal.html')
-
     def about_developers(self):
         return base.render('static/about_developers.html')
 
     def about_glossary(self):
         return base.render('static/about_glossary.html')
 
-class GobArApiController(ApiController):
+
+class GobArApiController(GAApiController, ApiController):
 
     def _remove_extra_id_field(self, json_string):
         json_dict = json.loads(json_string)
@@ -89,10 +87,12 @@ class GobArApiController(ApiController):
             default_response = self._remove_extra_id_field(default_response)
         return default_response
 
+    def status(self):
+        context = {'model': model, 'session': model.Session}
+        data_dict = {}
 
-class GobArUserController(UserController):
+        status = logic.get_action('status_show')(context, data_dict)
+        gobar_status = logic.get_action('gobar_status_show')(context, data_dict)
+        status['gobar_artifacts'] = gobar_status
 
-    def read(self, id=None):
-        if id and id == c.user:
-            return super(GobArUserController, self).read(id)
-        return h.redirect_to('home')
+        return self._finish_ok(status)

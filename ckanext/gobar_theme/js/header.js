@@ -16,4 +16,4 @@ $(function () {
     $('#header .dropdown-navbar-link').on('click', function(e) {
         $('#header .dropdown-navbar').toggleClass('hidden')
     })
-})
+});

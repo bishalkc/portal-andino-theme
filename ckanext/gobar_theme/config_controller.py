@@ -1,5 +1,5 @@
 import ckan.lib.base as base
-from ckan.common import request, g, c, _
+from ckan.common import request, g, c
 import ckan.lib.helpers as h
 import ckan.logic as logic
 import ckan.model as model
@@ -191,37 +191,38 @@ class GobArConfigController(base.BaseController):
 
     @staticmethod
     def _url_with_protocol(url):
-        if not urlparse.urlparse(url).scheme:
+        url = url.strip()
+        if len(url) > 0 and not urlparse.urlparse(url).scheme:
             url = "http://" + url
         return url
 
     @staticmethod
     def _authorize():
-        context = {'model': model, 'session': model.Session,
-                   'user': c.user or c.author, 'auth_user_obj': c.userobj,
-                   'save': 'save' in request.params}
+        context = {'model': model, 'user': c.user, 'auth_user_obj': c.userobj}
         try:
-            check_access('package_create', context)
+            logic.check_access('sysadmin', context, {})
             return True
-        except NotAuthorized:
-            abort(401, _('Unauthorized to change config'))
+        except logic.NotAuthorized:
+            return h.redirect_to('home')
 
     @classmethod
     def _read_config(cls):
         try:
-            gobar_config = json.loads(os.environ['GOBAR_CONFIG'])
+            gobar_config = json.loads(g.GOBAR_CONFIG)
         except Exception:
             with open(cls.CONFIG_PATH) as json_data:
                 try:
                     gobar_config = json.load(json_data)
                 except Exception:
                     gobar_config = {}
+                g.GOBAR_CONFIG = json.dumps(gobar_config)
+
         return gobar_config
 
     @classmethod
     def _set_config(cls, config_dict):
         json_string = json.dumps(config_dict, sort_keys=True, indent=2)
-        os.environ['GOBAR_CONFIG'] = json_string
+        g.GOBAR_CONFIG = json_string
         with open(cls.CONFIG_PATH, 'w') as json_data:
             json_data.write(json_string)
 

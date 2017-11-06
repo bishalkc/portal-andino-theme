@@ -23,7 +23,7 @@
 
     {{ form.input('maintainer_email', label='E-mail of Maintainer', id='field-maintainer-email', value=data.maintainer_email, error=errors.maintainer_email, classes=['control-medium']) }}
 
-    {{ form.input('Documentación', label='Documentation', type='text', value=h.get_pkg_extra(data, 'Documentación'), classes=['hidden-extra'], placeholder='Ex. https://github.com/bishalkc') }}
+    {{ form.input('Documentation', label='Documentation', type='text', value=h.get_pkg_extra(data, 'Documentation'), classes=['hidden-extra'], placeholder='Ex. https://github.com/bishalkc') }}
 
     {{ form.input('url', label='Source', id='field-url', placeholder='Ex. https://data.soscbaha.org', value=data.url, error=errors.url, classes=['control-medium']) }}
 
@@ -47,7 +47,7 @@
         <label>Time covered by the dataset</label>
         <label class="detail-hour">
             <input type="checkbox" id="date_with_time" {{ 'checked' if date_has_time else '' }}>
-            Do you want to speciry duration of the dataset?
+            Do you want to specify duration of the dataset?
         </label>
         <table class="date-picker" data-dates="{{ h.get_pkg_extra(data, 'dateRange') }}">
             <tr>
